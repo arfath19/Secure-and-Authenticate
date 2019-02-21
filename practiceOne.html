@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Practice Session</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <link rel="icon" href="http://dalfeti.com/company/blackearthicon.png" type="image/x-icon">
+
+         <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+      $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+         
+//            
+//           var smoothScroll = function(second) {
+//    var MIN_PIXELS_PER_STEP = 16;
+//    var MAX_SCROLL_STEPS = 30;
+//    var target = document.getElementById(second);
+//    var scrollContainer = target;
+//    do {
+//        scrollContainer = scrollContainer.parentNode;
+//        if (!scrollContainer) return;
+//        scrollContainer.scrollTop += 1;
+//    } while (scrollContainer.scrollTop === 0);
+//
+//    var targetY = 0;
+//    do {
+//        if (target == scrollContainer) break;
+//        targetY += target.offsetTop;
+//    } while (target = target.offsetParent);
+//
+//    var pixelsPerStep = Math.max(MIN_PIXELS_PER_STEP,
+//                                 (targetY - scrollContainer.scrollTop) / MAX_SCROLL_STEPS);
+//
+//    var stepFunc = function() {
+//        scrollContainer.scrollTop =
+//            Math.min(targetY, pixelsPerStep + scrollContainer.scrollTop);
+//
+//        if (scrollContainer.scrollTop >= targetY) {
+//            return;
+//        }
+//
+//        window.requestAnimationFrame(stepFunc);
+//    };
+//
+//    window.requestAnimationFrame(stepFunc);
+//}
+//          
+
+        </script>
+        <style>
+             #second1 {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 350px;
+  z-index: 1;
+}
+#second1 {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+#second1:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 10px #777;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: wheat;
+  border-radius: 15px;
+}
+            .popup {
+width:100%;
+height:100%;
+display:none;
+position:fixed;
+top:0px;
+left:0px;
+background:rgba(0,0,0,0.75);
+}
+/* Inner */
+.popup-inner {
+    background: white;
+max-width:700px;
+width:90%;
+padding:40px;
+position:absolute;
+top:50%;
+left:50%;
+-webkit-transform:translate(-50%, -50%);
+transform:translate(-50%, -50%);
+box-shadow:0px 2px 6px rgba(0,0,0,1);
+border-radius:3px;
+}
+/* Close Button */
+.popup-close {
+width:30px;
+height:30px;
+padding-top:4px;
+display:inline-block;
+position:absolute;
+top:0px;
+right:0px;
+transition:ease 0.25s all;
+-webkit-transform:translate(50%, -50%);
+transform:translate(50%, -50%);
+border-radius:1000px;
+background:rgba(0,0,0,0.8);
+font-family:Arial, Sans-Serif;
+font-size:20px;
+text-align:center;
+line-height:100%;
+color:#fff;
+}
+.popup-close:hover {
+-webkit-transform:translate(50%, -50%) rotate(180deg);
+transform:translate(50%, -50%) rotate(180deg);
+background:rgba(0,0,0,1);
+text-decoration:none;
+}
+            body{
+                font-family: "Lato",sans-serif;
+                font-size:16px;
+                font-weight: 300;
+            }
+            div.top {
+/*                color: red;*/
+                height: 100px;
+                width: 100%;
+                position: relative;
+                 overflow: hidden;
+/*                background-color: #f1f1f1;*/
+                
+                padding: 20px 10px;
+            }
+         div.top   a {
+             margin-right: 30px;
+  float: left;
+  color: black;
+/*  text-align: center;*/
+  padding: 5px;
+  text-decoration: none;
+  font-size: 18px; 
+/*  line-height: 25px;*/
+  border-radius: 4px;
+}
+div.top a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+div.top a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+div.top a:active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+div.top-right {
+  float: right;
+}
+            div.top1 {
+                color: red;
+                height: 525px;
+                /*width: 100%;*/
+                margin-left: 25px;
+                margin-right: 25px;
+                background-image: url('SE.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-color: yellow;
+            }
+                div.top2 {
+                color: red;
+                height: 755px;
+                width: 100%;
+                background-color:white;
+              
+            }
+            div.footer{
+                 background-image: url('SE.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+            }
+            button{
+                
+              width: 20em;
+                background-color: #E8A5FC;
+                color: white;
+                margin: .5em;
+                width: 20em;
+                height: 2.5em;
+                margin-left: 1.5em;
+                border-radius: 2em;
+                cursor: pointer;
+                outline: none;
+                height: 3rem;
+                width: 18rem;
+                margin-top:85px;
+            }
+            input{
+                font-family: verdana;
+                font-weight: lighter;
+/*                padding-left:10px ; 
+                padding-right:10px ; */
+                border-radius: 7px;
+                padding-top:5px ;
+                 padding-bottom:5px  ;
+                 margin-top: 11px;
+            }
+            #submit{
+                margin-left: 600px;
+                padding-left:15px;
+                padding-right:15px;
+                
+            }
+          
+.fa {
+  padding: 10px 20px; 
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+            textArea{
+                font-family: verdana;
+                padding:10px 18px 10px 10px;
+                border-radius: 7px;
+            }
+            label{
+                 background-color: navy;
+            }
+/*          nav
+        {
+	width:100%;
+	height:43px;
+	list-style-type:none;
+	margin:0px auto;
+	background-color: whitesmoke;
+	margin-bottom:20px;
+        margin-left: 20px;
+        }
+        nav li
+        {
+	-webkit-transition: -webkit-transform 1s, background 0.4s, width 2s, height 1s, opacity 1s; 
+        transition-timing-function: ease-in-out;
+        transition-duration: 1s;
+	font-family: sans-serif; 
+	text-shadow: #0d1d35 0.7px 0.2px 0.4px; 
+       
+	display:inline;
+	padding:13px 25px;
+	font-size:13px;
+	line-height:43px;
+        }
+        nav li:hover
+        {
+	background-color:#55c57a;
+        text-decoration:underline;
+        letter-spacing: 1px;
+        }*/
+        .top{
+            position: absolute;
+        }
+         .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+  background: #00aff0;
+  color: white;
+} 
+
+#img {
+  
+-webkit-box-shadow: -2px 7px 40px 2px rgba(0,0,0,0.49);
+
+-moz-box-shadow: -2px 7px 40px 2px rgba(0,0,0,0.49);
+
+box-shadow: -2px 7px 40px 2px rgba(0,0,0,0.49);
+
+-webkit-transition: all ease-in-out 500ms;
+
+-moz-transition: all ease-in-out 500ms;
+
+-o-transition:all ease-in-out 500ms;
+
+transition: all ease-in-out 500ms;
+
+}
+
+
+#img:hover {
+
+-webkit-box-shadow: -2px 19px 24px 0px rgba(0,0,0,0.3);
+
+-moz-box-shadow: -2px 19px 24px 0px rgba(0,0,0,0.3);
+
+box-shadow: -2px 19px 24px 0px rgba(0,0,0,0.3);
+
+transform: translate(0px,-4px);
+
+}
+
+        </style>
+        <script>
+             $(function() {
+//----- OPEN
+$('[data-popup-open]').on('click', function(e)  {
+var targeted_popup_class = jQuery(this).attr('data-popup-open');
+$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+e.preventDefault();
+});
+//----- CLOSE
+$('[data-popup-close]').on('click', function(e)  {
+var targeted_popup_class = jQuery(this).attr('data-popup-close');
+$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+e.preventDefault();
+});
+});
+        </script>
+    </head>
+    <body>
+        <div class="top" id="home" style="" ><div style="display:inline;">
+                <img src="SE.png" style="height:70px"><span style="display: inline;font-size: 40px">SECURITY +</span></div>
+            <div class="header-right" style="float:right;">
+    <a class="active" href="#home">Home</a>
+    <a  href="#first">About Us</a>
+    <a href="#second">Products</a>
+    <a href="#third">Contact Us</a>
+     <a href="#forth">Follow Us</a>
+  </div>
+        </div>
+        <div class="top1" id="first" >
+            
+        </div>
+     <div class="top2" id="second"  style="display:inline-block;">
+      <div style="margin-top:25px;">
+                   <div id="second1">
+                <div id="f1_card" class="shadow" style="background-color:wheat;height: 350px;width: 350px;display:inline-block;margin-left: 100px;border-radius: 15px;">
+                <div class="front face">
+<!--    <img src="a.png"/>-->
+  </div>
+  <div class="back face center">
+    <p>This is nice for exposing more information about an image.</p>
+    <p>Any content can go here.</p>
+  </div>
+                </div></div>
+                   <div id="second1">
+                <div  id="f1_card" class="shadow" style="background-color:wheat;height: 350px;width: 350px;display:inline-block;margin-left: 300px;border-radius: 15px;">
+           <div class="front face">
+<!--    <img src="a.png"/>-->
+  </div>
+  <div class="back face center">
+    <p>This is nice for exposing more information about an image.</p>
+    <p>Any content can go here.</p>
+  </div>
+                </div>
+            </div>
+               </div>
+              
+              <div >
+                   <div id="second1">
+                <div id="f1_card" class="shadow" style="background-color:wheat;height: 350px;width: 350px;display:inline-block;margin-left: 100px;border-radius: 15px;">
+                <div class="front face">
+<!--    <img src="a.png"/>-->
+  </div>
+  <div class="back face center">
+    <p>This is nice for exposing more information about an image.</p>
+    <p>Any content can go here.</p>
+  </div>
+                </div></div>
+                   <div id="second1">
+                <div  id="f1_card" class="shadow" style="background-color:wheat;height: 350px;width: 350px;display:inline-block;margin-left: 300px;border-radius: 15px;">
+           <div class="front face">
+<!--    <img src="a.png"/>-->
+  </div>
+  <div class="back face center">
+    <p>This is nice for exposing more information about an image.</p>
+    <p>Any content can go here.</p>
+  </div>
+                </div>
+            </div>
+               </div>
+
+        </div>
+      
+        <div class="footer" id="third" style="height:350px;width: 100%;background-color:#00008B;display: inline-block;">   
+            <div class="ADDR" style="display: inline-block;padding-left: 80px;margin-left: 10px;padding-top: 50px;padding-right: 20px;background-color: white;border-radius: 100px">
+                <p class="ADDR1">
+                    ADDRESS :<br>
+          Unit No. 301, 3rd Floor, Building No. 14 <br>
+                Raheja Mindspace IT Park, <br>
+                HITEC City, Madhapur, <br>
+                Hyderabad, Telangana 500081.<br>
+                Phone No:9603475135,9700007728.<br>
+                Email Address:support@securityplus.com<br><br><br><br><br><br><br><br>
+
+                </p>
+            </div>
+            <div style="float:right;margin-right: 50px;background-color: white;height: 350px;width: 400px;border-radius: 50px;padding-left: 10px">
+                <form>
+                    <br>
+                    <table>
+                        <tr><td style="font-family:verdana;">Name :</td><td><input type="text" placeholder="Name"></td></tr>
+                        <tr><td style="font-family:verdana;">Organization Name:</td><td><input type="text" placeholder="Organization Name"></td></tr>
+                        <tr><td style="font-family:verdana;">Phone Number :</td><td><input type="text" placeholder="Phone Number"></td></tr>
+                        <tr><td style="font-family:verdana;">Email Id:</td><td><input type="text" placeholder="abcd@some.com"></td></tr>
+                        <tr><td style="font-family:verdana; margin-top: 5px">Address :</td><td><textarea ></textarea></td></tr>
+                        <tr><td></td><td><input type="submit" value="Submit"></td></tr>
+                    </table>
+                </form>
+            </div>
+           
+        </div>
+        <footer style="height: 100px;width: 100%;background-color: white;vertical-align: top" id="forth">
+            <div style="display: inline-block;padding-top: 50px;margin-left: 50px">
+                <p style="padding-left: 30px;"> Useful Links</p>
+                <ul class="buttons">
+                <li ><a href="#first">About Us</a></li>
+                <li ><a href="#second" >Products</a></li>
+                <li><a href="#third">Contact Us</a></li>
+                <li><a href="#forth">Follow Us</a></li>
+            </ul> 
+                
+            </div>
+            <div style="display: inline-block;margin-left: 250px">
+                <p style="padding-left: 30px;"> Legal</p>
+                <p>
+                    &copy; Copyright 2019<br>
+                    All Rights Reserved<br>
+                    <a  data-popup-open="popup-1" href="" >Terms &Conditions</a><br>
+                    <br>
+                </p>
+            <div class="popup" data-popup="popup-1">
+<div class="popup-inner">
+    <p>
+        Terms & Conditions :<br>
+        1 The Intellectual Property disclosure will inform users that the contents, logo and other visual media you created is your property and is protected by copyright laws.<br>
+        2.A Termination clause will inform that users’ accounts on your website and mobile app or users’ access to your website and mobile (if users can’t have an account with you) can be terminated in case of abuses or at your sole discretion.<br>
+        3.A Governing Law will inform users which laws govern the agreement. This should the country in which your company is headquartered or the country from which you operate your website and mobile app.<br>
+        4.A Links To Other Web Sites clause will inform users that you are not responsible for any third party websites that you link to. This kind of clause will generally inform users that they are responsible for reading and agreeing (or disagreeing) with the Terms and Conditions or Privacy Policies of these third parties.<br>
+        5.If your website or mobile app allows users to create content and make that content public to other users, a Content section will inform users that they own the rights to the content they have created. The “Content” clause usually mentions that users must give you (the website or mobile app developer) a license so that you can share this content on your website/mobile app and to make it available to other users.<br>
+        6.A Limit What Users Can Do clause can inform users that by agreeing to use your service, they’re also agreeing to not do certain things. This can be part of a very long and thorough list in your Terms and Conditions agreements so as to encompass the most amount of negative uses.<br>
+    
+    </p>
+<p><a data-popup-close="popup-1" href="#">Close</a></p>
+<a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+</div>
+</div>
+
+            </div>
+            
+<div style="display: inline-block;margin-left: 200px"> 
+
+            <p style=""> Subscribe to our newsletter for the latest technology news and updates</p>
+           
+            <form onsubmit="">
+                <input style="" type="email" placeholder="abcxyz@some.com">&nbsp;<input type="submit" value="Subscribe" style="background: navy;color: white">
+            </form><br>
+</div>
+            <div style="display: inline-block;margin-left: 450px">  <p style="padding-left:20px;font-family:verdana;">follow us: </p>
+            <a href="#" class="fa fa-facebook">&nbsp;</a><a href="#" class="fa fa-twitter"></a>&nbsp;<a href="#" class="fa fa-google"></a>&nbsp;
+<a href="#" class="fa fa-linkedin"></a>&nbsp;
+<a href="#" class="fa fa-youtube"></a>&nbsp;
+<a href="#" class="fa fa-instagram"></a>&nbsp;
+<a href="#" class="fa fa-pinterest"></a>&nbsp;
+<a href="#" class="fa fa-snapchat-ghost"></a>&nbsp;
+<a href="#" class="fa fa-skype"></a> &nbsp;
+            </div>
+            </footer>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
